@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Faqs extension for Refinery CMS'
   s.date              = '2014-06-03'
-  s.summary           = 'Faqs extension for Refinery CMS'
+  s.summary           = 'FAQs extension for Refinery CMS'
   s.authors           = ['William Makley']
   s.licence           = 'MIT'
 
