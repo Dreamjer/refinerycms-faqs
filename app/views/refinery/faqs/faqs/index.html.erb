@@ -1,11 +1,13 @@
 <% content_for :body do %>
-  <ul id="faqs">
-    <% @faqs.each do |faq| %>
-      <li>
-        <%= link_to faq.question, refinery.faqs_faq_path(faq) %>
-      </li>
-    <% end %>
-  </ul>
+  <% @faqs.each do |faq| %>
+    <div class="faq" id="<%= dom_id(faq) %>">
+      <h2 class="faq_question"><%= faq.question %></h2>
+      <div class="faq_answer"><%= raw faq.answer %></div>
+      <% if faq.link.present? %>
+        <p class="faq_link"><%= link_to faq.link, faq.link %></p>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
