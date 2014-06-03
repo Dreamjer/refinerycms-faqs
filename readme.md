@@ -1,10 +1,15 @@
 # Faqs extension for Refinery CMS.
 
-## How to build this extension as a gem
+## Installation
 
-    cd vendor/extensions/faqs
-    gem build refinerycms-faqs.gemspec
-    gem install refinerycms-faqs.gem
-
-    # Sign up for a http://rubygems.org/ account and publish the gem
-    gem push refinerycms-faqs.gem
+Gemfile:
+```ruby
+gem 'refinerycms-faqs', :github => 'tortus/refinerycms-faqs', :branch => '2-1-stable'
+```
+Terminal:
+```sh
+bundle install
+rails generate refinery:faqs
+rake db:migrate
+rake db:seed
+```
