@@ -4,11 +4,11 @@
 
   </span>
   <span class='actions'>
-    
-    <%= link_to refinery_icon_tag("application_go.png"), refinery.faqs_faq_path(faq),
+
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.faqs_path(:anchor => dom_id(faq)),
         :title => t('.view_live_html'),
         :target => "_blank" %>
-    
+
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_faqs_admin_faq_path(faq),
          :title => t('.edit') %>
     <%= link_to refinery_icon_tag("delete.png"), refinery.faqs_admin_faq_path(faq),
