@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.date              = '2014-06-03'
   s.summary           = 'FAQs extension for Refinery CMS'
   s.authors           = ['William Makley']
-  s.licence           = 'MIT'
+  s.license           = 'MIT'
 
   s.require_paths     = %w(lib)
   s.files             = `git ls-files`.split($/)
