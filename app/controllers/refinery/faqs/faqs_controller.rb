@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_faqs
-        @faqs = Faq.order('position ASC')
+        @faqs = Faq.live
       end
 
       def find_page

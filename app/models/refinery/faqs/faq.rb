@@ -10,6 +10,14 @@ module Refinery
       acts_as_indexed :fields => [:question, :answer]
 
       default_scope { order(:question) }
+
+      def self.live
+        where('not hidden')
+      end
+
+      def title
+        question
+      end
     end
   end
 end
