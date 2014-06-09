@@ -20,8 +20,10 @@ en:
             edit: Edit this faq
             delete: Remove this faq forever
           form:
-            featured_group: Featured group
-            featured_help: Featured help
+            featured: Featured
+            featured_help: Show in "Featered FAQs" area (usually a footer or sidebar).
+            hidden: Hidden
+            hidden_help:
       faqs:
         show:
           other: Other FAQs
