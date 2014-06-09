@@ -3,7 +3,7 @@ module Refinery
     class Faq < Refinery::Core::BaseModel
       self.table_name = 'refinery_faqs'
 
-      attr_accessible :question, :answer, :link, :hidden, :position
+      attr_accessible :question, :answer, :link, :featured, :hidden, :position
 
       validates :question, :presence => true, :uniqueness => true
       validates :answer, :presence => true
