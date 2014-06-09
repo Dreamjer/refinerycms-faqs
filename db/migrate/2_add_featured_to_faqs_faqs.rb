@@ -1,4 +1,4 @@
-class AddFeatureToFaqsFaqs < ActiveRecord::Migration
+class AddFeaturedToFaqsFaqs < ActiveRecord::Migration
 
   def change
     add_column :refinery_faqs_faqs, :featured, :boolean, :null => false, :default => false
