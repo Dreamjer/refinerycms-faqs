@@ -30,8 +30,12 @@
   </div>
 
   <div class='field'>
-    <%= f.label :hidden -%>
+    <span class='label_with_help'>
+      <%= f.label :hidden, t('.hidden') %>
+      <%= refinery_help_tag t('.hidden_help') %>
+    </span>
     <%= f.check_box :hidden, :checked => @faq[:hidden] -%>
+    <%= f.label :hidden, t('.hidden'), :class => 'stripped' -%>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,

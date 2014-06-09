@@ -23,7 +23,7 @@ en:
             featured: Featured
             featured_help: Show in "Featered FAQs" area (usually a footer or sidebar).
             hidden: Hidden
-            hidden_help:
+            hidden_help: Hide this FAQ from visitors.
       faqs:
         show:
           other: Other FAQs
