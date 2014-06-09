@@ -21,6 +21,15 @@
   </div>
 
   <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :featured, t('.featured_group') %>
+      <%= refinery_help_tag t('.featured_help') %>
+    </span>
+    <%= f.check_box :featured, :checked => @faq[:featured] -%>
+    <%= f.label :featured, :class => 'stripped' -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :hidden -%>
     <%= f.check_box :hidden, :checked => @faq[:hidden] -%>
   </div>

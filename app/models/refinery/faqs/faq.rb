@@ -16,6 +16,10 @@ module Refinery
         where('not hidden')
       end
 
+      def self.featured
+        where(:featured => true)
+      end
+
       def title
         question
       end
