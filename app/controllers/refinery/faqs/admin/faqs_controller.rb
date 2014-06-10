@@ -5,7 +5,8 @@ module Refinery
 
         crudify :'refinery/faqs/faq',
                 :title_attribute => 'question',
-                :xhr_paging => false
+                :xhr_paging => false,
+                :sortable => false
 
       end
     end
