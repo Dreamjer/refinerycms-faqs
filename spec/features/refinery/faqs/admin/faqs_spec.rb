@@ -24,7 +24,7 @@ describe Refinery do
           before do
             visit refinery.faqs_admin_faqs_path
 
-            click_link "Add New Faq"
+            click_link "Add New FAQ"
           end
 
           context "valid data" do
@@ -52,7 +52,7 @@ describe Refinery do
             it "should fail" do
               visit refinery.faqs_admin_faqs_path
 
-              click_link "Add New Faq"
+              click_link "Add New FAQ"
 
               fill_in "Question", :with => "UniqueTitle"
               click_button "Save"
@@ -71,7 +71,7 @@ describe Refinery do
             visit refinery.faqs_admin_faqs_path
 
             within ".actions" do
-              click_link "Edit this faq"
+              click_link "Edit this FAQ"
             end
 
             fill_in "Question", :with => "A different question"
@@ -88,7 +88,7 @@ describe Refinery do
           it "should succeed" do
             visit refinery.faqs_admin_faqs_path
 
-            click_link "Remove this faq forever"
+            click_link "Remove this FAQ forever"
 
             page.should have_content("'UniqueTitleOne' was successfully removed.")
             Refinery::Faqs::Faq.count.should == 0
