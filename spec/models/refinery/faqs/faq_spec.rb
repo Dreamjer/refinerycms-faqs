@@ -4,14 +4,16 @@ module Refinery
   module Faqs
     describe Faq do
       describe "validations" do
-        subject do
-          FactoryGirl.create(:faq,
-          :question => "Refinery CMS")
-        end
+        subject {
+          FactoryGirl.build(:faq)
+        }
 
         it { should be_valid }
         its(:errors) { should be_empty }
-        its(:question) { should == "Refinery CMS" }
+      end
+
+      it "saves" do
+        subject.save.should be_true
       end
     end
   end
