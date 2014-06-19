@@ -1,0 +1,10 @@
+<div class="faq" id="<%= dom_id(faq) %>">
+  <h2 class="faq_question"><%= faq.question %></h2>
+  <div class="faq_answer"><%= raw faq.answer %></div>
+  <% if faq.link.present? %>
+    <p class="faq_link"><%= link_to truncate(faq.link, :length => 75), faq.link %></p>
+  <% end %>
+  <p>
+    <a href="#content">Back to top</a>
+  </p>
+</div>

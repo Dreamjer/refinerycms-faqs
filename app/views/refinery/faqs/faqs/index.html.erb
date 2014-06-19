@@ -1,13 +1,13 @@
 <% content_for :body do %>
-  <% @faqs.each do |faq| %>
-    <div class="faq" id="<%= dom_id(faq) %>">
-      <h2 class="faq_question"><%= faq.question %></h2>
-      <div class="faq_answer"><%= raw faq.answer %></div>
-      <% if faq.link.present? %>
-        <p class="faq_link"><%= link_to truncate(faq.link, :length => 75), faq.link %></p>
-      <% end %>
-    </div>
-  <% end %>
+  <ul id="faqs_index">
+    <% @faqs.each do |faq| -%>
+      <li>
+        <%= link_to(faq.question, '#' + dom_id(faq)) %>
+      </li>
+    <% end -%>
+  </ul>
+
+  <%= render :partial => 'faq', :collection => @faqs %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
