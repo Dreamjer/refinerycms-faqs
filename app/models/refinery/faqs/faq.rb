@@ -6,7 +6,6 @@ module Refinery
       attr_accessible :question, :answer, :link, :featured, :hidden, :position
 
       validates :question, :presence => true, :uniqueness => true
-      validates :answer, :presence => true
 
       acts_as_indexed :fields => [:question, :answer]
 
