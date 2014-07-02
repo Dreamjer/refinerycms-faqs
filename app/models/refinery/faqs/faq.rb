@@ -13,7 +13,7 @@ module Refinery
       acts_as_indexed :fields => [:question, :answer]
 
       def self.live
-        where('not hidden')
+        where(:hidden => false)
       end
 
       def self.featured
