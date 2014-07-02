@@ -3,7 +3,8 @@ module Refinery
     class Category < Refinery::Core::BaseModel
       self.table_name = 'refinery_faq_categories'
 
-      has_many :faqs, :class_name => 'Refinery::Faqs::Faq', :inverse_of => :category
+      has_many :faqs, :class_name => 'Refinery::Faqs::Faq', :inverse_of => :category,
+        :dependent => :nullify
 
       attr_accessible :name, :position
 
