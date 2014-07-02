@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_categories
-        @categories = Category.by_name.includes(:faqs)
+        @categories = Category.by_name.includes(:faqs).merge(Faq.live)
       end
 
       def find_uncategorized_faqs
