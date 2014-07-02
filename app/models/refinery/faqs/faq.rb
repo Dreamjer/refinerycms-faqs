@@ -25,6 +25,8 @@ module Refinery
       def title
         question
       end
+
+      delegate :name, :to => :category, :prefix => true, :allow_nil => true
     end
   end
 end
