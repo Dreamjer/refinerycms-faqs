@@ -7,6 +7,7 @@ class CreateFaqCategories < ActiveRecord::Migration
       t.integer :position
       t.timestamps
     end
+    add_index :refinery_faq_categories, :slug
   end
 
 end
