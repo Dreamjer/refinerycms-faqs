@@ -2,7 +2,7 @@ module Refinery
   module Faqs
     class FaqsController < ::ApplicationController
 
-      before_filter :find_all_faqs
+      before_filter :find_all_categories, :find_uncategorized_faqs
       before_filter :find_page
 
       def index
@@ -21,8 +21,12 @@ module Refinery
 
     protected
 
-      def find_all_faqs
-        @faqs = Faq.live.by_category_name
+      def find_all_categories
+        @categories = Category.by_name.includes(:faqs)
+      end
+
+      def find_uncategorized_faqs
+        @uncategorized_faqs = Faq.live.where(:category_id => nil).by_question
       end
 
       def find_page

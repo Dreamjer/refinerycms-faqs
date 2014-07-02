@@ -1,13 +1,23 @@
 <% content_for :body do %>
-  <ul id="faqs_index">
-    <% @faqs.each do |faq| -%>
-      <li>
-        <%= link_to(faq.question, '#' + dom_id(faq)) %>
-      </li>
-    <% end -%>
-  </ul>
+  <% @categories.each do |category| -%>
+    <h2><%= link_to(category.name, '#' + dom_id(category)) %></h2>
+    <%= render "list", :faqs => category.faqs %>
+  <% end -%>
 
-  <%= render :partial => 'faq', :collection => @faqs %>
+  <% if @uncategorized_faqs.any? -%>
+    <h2><a href="#uncategorized_faqs">Uncategorized</a></h2>
+    <%= render "list", :faqs => @uncategorized_faqs %>
+  <% end -%>
+
+  <% @categories.each do |category| -%>
+    <h2 id="<%= dom_id(category) %>"></h2>
+    <%= render :partial => 'faq', :collection => @faqs %>
+  <% end -%>
+
+  <% if @uncategorized_faqs.any? -%>
+    <h2 id="uncategorized_faqs">Uncategorized</a></h2>
+    <%= render :partial => 'faq', :collection => @uncategorized_faqs %>
+  <% end -%>
 <% end %>
 
 <%= render '/refinery/content_page' %>

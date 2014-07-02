@@ -20,6 +20,10 @@ module Refinery
         where(:featured => true)
       end
 
+      def self.by_question
+        order("refinery_faqs.question")
+      end
+
       def self.by_category_name
         includes(:category).order("refinery_faq_categories.name, refinery_faqs.question")
       end

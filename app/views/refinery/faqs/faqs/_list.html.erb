@@ -1,0 +1,7 @@
+<ul class="faqs_list">
+  <% faqs.each do |faq| -%>
+    <li>
+      <%= link_to(faq.question, '#' + dom_id(faq)) %>
+    </li>
+  <% end -%>
+</ul>
