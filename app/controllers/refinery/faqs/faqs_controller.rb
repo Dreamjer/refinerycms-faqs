@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_faqs
-        @faqs = Faq.live
+        @faqs = Faq.live.by_category_name
       end
 
       def find_page

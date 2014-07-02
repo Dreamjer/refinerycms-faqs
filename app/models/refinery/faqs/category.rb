@@ -12,7 +12,9 @@ module Refinery
 
       acts_as_indexed :fields => [:name]
 
-      default_scope { order(:name) }
+      def self.by_name
+        order(:name)
+      end
 
       def title
         name

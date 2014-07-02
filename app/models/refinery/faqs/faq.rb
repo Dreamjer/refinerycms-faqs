@@ -12,14 +12,16 @@ module Refinery
 
       acts_as_indexed :fields => [:question, :answer]
 
-      default_scope { order(:question) }
-
       def self.live
         where('not hidden')
       end
 
       def self.featured
         where(:featured => true)
+      end
+
+      def self.by_category_name
+        includes(:category).order("refinery_faq_categories.name, refinery_faqs.question")
       end
 
       def title
