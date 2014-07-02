@@ -4,7 +4,7 @@ module Refinery
       self.table_name = 'refinery_faq_categories'
 
       extend FriendlyId
-      friendly_id :use => :slugged
+      friendly_id :name, :use => :slugged
 
       has_many :faqs, :class_name => 'Refinery::Faqs::Faq', :inverse_of => :category,
         :dependent => :nullify
