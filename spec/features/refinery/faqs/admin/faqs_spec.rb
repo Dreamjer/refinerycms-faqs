@@ -22,6 +22,7 @@ describe Refinery do
 
         describe "create" do
           before do
+            @category = FactoryGirl.create(:category)
             visit refinery.faqs_admin_faqs_path
 
             click_link "Add New FAQ"
@@ -29,6 +30,7 @@ describe Refinery do
 
           context "valid data" do
             it "should succeed" do
+              select @category.name, :from => "Category"
               fill_in "Question", :with => "This is a test of the first string field"
               click_button "Save"
 

@@ -4,6 +4,11 @@
               :include_object_name => true %>
 
   <div class='field'>
+    <%= f.label :category_id, "Category" -%>
+    <%= f.select :category_id, Refinery::Faqs::Category.all.map {|c| [c.name, c.id]}, :include_blank => true -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :question -%>
     <%= f.text_field :question, :class => 'larger widest' -%>
   </div>
