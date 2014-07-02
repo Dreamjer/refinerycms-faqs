@@ -13,7 +13,7 @@ module Refinery
       end
 
       it "saves" do
-        subject.save.should be_true
+        subject.save.should be_truthy
       end
     end
   end
