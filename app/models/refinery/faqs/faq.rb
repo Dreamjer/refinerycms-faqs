@@ -3,7 +3,10 @@ module Refinery
     class Faq < Refinery::Core::BaseModel
       self.table_name = 'refinery_faqs'
 
-      attr_accessible :question, :answer, :link, :featured, :hidden, :position
+      belongs_to :category, :class_name => 'Refinery::Faqs::Category', :inverse_of => :faqs
+
+      attr_accessible :question, :answer, :link, :featured, :hidden, :position,
+        :category_id
 
       validates :question, :presence => true, :uniqueness => true
 
