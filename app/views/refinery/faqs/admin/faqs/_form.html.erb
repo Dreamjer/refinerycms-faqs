@@ -5,7 +5,7 @@
 
   <div class='field'>
     <%= f.label :category_id, "Category" -%>
-    <%= f.select :category_id, Refinery::Faqs::Category.all.map {|c| [c.name, c.id]}, :include_blank => true -%>
+    <%= f.select :category_id, Refinery::Faqs::Category.by_name.map {|c| [c.name, c.id]}, :include_blank => true -%>
   </div>
 
   <div class='field'>
