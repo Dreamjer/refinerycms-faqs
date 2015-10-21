@@ -4,7 +4,7 @@
 
 Gemfile:
 ```ruby
-gem 'refinerycms-faqs', :github => 'tortus/refinerycms-faqs', :branch => '2-1-stable'
+gem 'refinerycms-faqs', :github => 'dreamjer/refinerycms-faqs', :branch => '2-1-stable'
 ```
 Terminal:
 ```sh
