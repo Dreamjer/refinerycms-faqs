@@ -5,7 +5,7 @@ module Refinery
 
       belongs_to :category, :class_name => 'Refinery::Faqs::Category', :inverse_of => :faqs
 
-      attr_accessible :question, :answer, :link, :featured, :hidden, :position,
+      #attr_accessible :question, :answer, :link, :featured, :hidden, :position,
         :category_id
 
       validates :question, :presence => true, :uniqueness => true
