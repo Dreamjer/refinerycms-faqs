@@ -6,7 +6,7 @@ module Refinery
       has_many :faqs, :class_name => 'Refinery::Faqs::Faq', :inverse_of => :category,
         :dependent => :nullify
 
-      attr_accessible :name, :position
+      #attr_accessible :name, :position
 
       validates :name, :presence => true, :uniqueness => true
 
