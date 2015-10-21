@@ -9,6 +9,15 @@ module Refinery
                 :sortable => false,
                 :include => [:category],
                 :order => "refinery_faq_categories.name ASC, refinery_faqs.question ASC"
+                
+        private
+          def faq_params
+            params.require(:faq).permit(
+              :question, :answer, :link, :featured, :hidden, :position,
+              category_ids: []
+            )
+
+          end
 
       end
     end
